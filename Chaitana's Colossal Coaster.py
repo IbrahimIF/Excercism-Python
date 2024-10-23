@@ -2,96 +2,59 @@
 
 
 def add_me_to_the_queue(express_queue, normal_queue, ticket_type, person_name):
-    """Add a person to the 'express' or 'normal' queue depending on the ticket number.
 
-    :param express_queue: list - names in the Fast-track queue.
-    :param normal_queue: list - names in the normal queue.
-    :param ticket_type: int - type of ticket. 1 = express, 0 = normal.
-    :param person_name: str - name of person to add to a queue.
-    :return: list - the (updated) queue the name was added to.
-    """
     if ticket_type >= 1:
         express_queue.append(person_name)
         return express_queue
     else:
         normal_queue.append(person_name)
         return normal_queue
-    
-    
-    
-    
-
-
-
 
 def find_my_friend(queue, friend_name):
-    """Search the queue for a name and return their queue position (index).
 
-    :param queue: list - names in the queue.
-    :param friend_name: str - name of friend to find.
-    :return: int - index at which the friends name was found.
-    """
     index = queue.index(friend_name)
     return index
 
 def add_me_with_my_friends(queue, index, person_name):
-    """Insert the late arrival's name at a specific index of the queue.
 
-    :param queue: list - names in the queue.
-    :param index: int - the index at which to add the new name.
-    :param person_name: str - the name to add.
-    :return: list - queue updated with new name.
-    """
     queue.insert(index, person_name)
     return queue
     
 def remove_the_mean_person(queue, person_name):
-    """Remove the mean person from the queue by the provided name.
 
-    :param queue: list - names in the queue.
-    :param person_name: str - name of mean person.
-    :return: list - queue update with the mean persons name removed.
-    """
     queue.remove(person_name)
     return queue
 
 
 def how_many_namefellows(queue, person_name):
-    """Count how many times the provided name appears in the queue.
 
-    :param queue: list - names in the queue.
-    :param person_name: str - name you wish to count or track.
-    :return: int - the number of times the name appears in the queue.
-    """
     return queue.count(person_name)
 
 def remove_the_last_person(queue):
-    """Remove the person in the last index from the queue and return their name.
-
-    :param queue: list - names in the queue.
-    :return: str - name that has been removed from the end of the queue.
-    """
-
     return queue[-1]
 
 
 def sorted_names(queue):
-    """Sort the names in the queue in alphabetical order and return the result.
-
-    :param queue: list - names in the queue.
-    :return: list - copy of the queue in alphabetical order.
-    """
     return sorted(queue)
-
-
 
 
 # to print out the return value.
 
-square = add_me_to_the_queue(express_queue, normal_queue, ticket_type, person_name)
-total = total()
+add_me = add_me_to_the_queue(['Tony', 'Bruce'], ['RobotGuy', 'WW'], 0, 'HawkEye')
+find_friend = find_my_friend(['Natasha', 'Steve', 'Tchalla', 'Wanda', 'Rocket'], 'Natasha')
+add_me_with_friend = add_me_with_my_friends(['Natasha', 'Steve', 'Tchalla', 'Wanda', 'Rocket'], 0, 'Bucky')
+remove_person = remove_the_mean_person(['Natasha', 'Steve', 'Ultron', 'Wanda', 'Rocket'], 'Ultron')
+times_name_appars = how_many_namefellows(['Natasha', 'Steve', 'Ultron', 'Natasha', 'Rocket'], 'Bucky')
+remove_last = remove_the_last_person(['Natasha', 'Steve', 'Ultron', 'Natasha', 'Rocket'])
+sort_queue = sorted_names(['Steve', 'Ultron', 'Natasha', 'Rocket'])
 
 
 # Output
-print('| square:', square, 
-      '| total:', total, )
+print('| Add a person to queue:', add_me, 
+      '| find person in queue:', find_friend, 
+      '| Add person with friend to the queue:', add_me_with_friend, 
+      '| removed person from queue:', remove_person, 
+      '| how many times the name appears:', times_name_appars, 
+      '| removed last person fromq queue:', remove_last,
+      '| sort the queue:', sort_queue,)
+
