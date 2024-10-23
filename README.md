@@ -1,11 +1,10 @@
 # Excercism-Python
 
-![Static Badge](https://img.shields.io/badge/made_python)
+![Static Badge](https://img.shields.io/badge/made_with-python-blue)
 
- Excercism Python solutions
-
-##### **Description**:
+#### **Description**:
 This is a repository made to showcase my completed solutions for the different challenges and problems on Excercism using the programming language Python.
+
 ----
 ## Technologies and Tools Utilised:
 
